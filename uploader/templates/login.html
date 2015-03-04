@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="login" class="col-lg-4 col-md-3 center-block upload-form">
+	<h2>Uploader Login</h2>
+	<form class="form-horizontal" name="LoginForm" action="/login/" method="post">
+	   {% csrf_token %}
+		<input type="hidden" name="next" value="{{ request.REQUEST.next }}" />
+		<div class="control-group">
+			<div class="controls">
+			    <input class="form-control" type="text" id="username" name="username"  placeholder="Username">
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+			    <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+			    <button type="submit" class="btn btn-primary" id="login-btn">Login</button>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}
